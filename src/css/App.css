@@ -1,0 +1,26 @@
+.root {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+}
+
+.controlPanel{
+  width: 10%;
+}
+.mainPanel{
+  width: 90%;
+  height: 100%;
+}
+.overview{
+  height: 50%;
+}
+.otherview{
+  height: 50%;
+  display: flex;
+}
+.detailView{
+  width: 50%;
+}
+.assistView{
+  width: 50%;
+}

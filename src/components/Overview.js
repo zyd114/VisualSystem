@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { store } from "../store";
-import ReactEcharts from "echarts-for-react";
-import 'echarts/map/js/china';
+import ReactEcharts from 'echarts-for-react';
+
+import { store } from '../store';
 
 function Overview() {
     const {state, dispatch} = useContext(store);
@@ -27,7 +27,8 @@ function Overview() {
     };
 
     return <div>
-        <ReactEcharts option={getOption()} />;
+        <p>Overview</p>
+        <ReactEcharts option={getOption()} />
     </div>
 }
 

@@ -1,7 +1,8 @@
 // 本文件是一个子视图
 
 import React from 'react';
-import {store} from "../store";
+
+import {store} from '../store';
 
 class AssistView extends React.Component {
     static contextType = store;
@@ -21,9 +22,10 @@ class AssistView extends React.Component {
          * 前者会在渲染时就调用函数，后者会在点击时调用，请仔细体会两者区别！！！
          */
         return <div>
+            <p>Assist View</p>
             <p>{state.count}</p>
             <button onClick={() => dispatch({ type: 'increment' })}>add</button>
-        </div>;
+        </div>
     }
 }
 

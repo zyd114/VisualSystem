@@ -7,6 +7,16 @@ const reducer = (state, action) => {
                 ...state,
                 count: state.count + 1
             };
+        case 'decrease':
+            return {
+                ...state,
+                count: state.count - 1
+            };
+        case 'changeOption':
+            return {
+                ...state,
+                changeOption: action.payload
+            };
         case 'init': {
             let newData = [];
             // TODO: use action.payload to update newData
