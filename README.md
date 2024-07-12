@@ -4,7 +4,7 @@
 
 1. 使用git命令，将本项目同步到本地：
 
-   `git clone https://github.com/WuJiang5521/ZJU_SummerSchool_ProjectTemplate.git`
+   `git clone https://github.com/susicaliu/ZJU_SummerSchool_ProjectTemplate.git`
    
 2. 在项目文件夹内，使用git命令，修改remote到你们小组的仓库：
 
@@ -24,8 +24,8 @@
    
    运行项目：`npm start`
    
-   如果能正常运行，你应该可以看到浏览器中出现四个区域，每个区域有一个数字0和一个按钮。
-   点击任意按钮都可以使四个数字加一。
+   如果能正常运行，你应该可以看到浏览器中出现四个区域: Control Panel, Overview, Assist View, Detail View。Control Panel中有按钮和下拉框，Overview中有柱状图，Detail View中有地图。单击"add"或"minus"按钮，数字会同时发生变化。
+   
    
 ## 本项目目前已安装的库
 
