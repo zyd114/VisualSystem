@@ -1,10 +1,12 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, useRef } from 'react';
 import ReactEcharts from 'echarts-for-react';
 
 import { store } from '../store';
 
 function Data_SQ_SD_BP() {
 	const [option, setOption] = useState({});
+    const [isFullscreen, setIsFullscreen] = useState(false);
+    const chartRef = useRef(null);
 
 	useEffect(() => {
 		fetch('./data_SQ_SD_BP.json')
@@ -81,10 +83,37 @@ function Data_SQ_SD_BP() {
 			.catch(error => console.error('Error fetching data:', error));
 	}, []);
 
+    const handleChartClick = () => {
+        setIsFullscreen(true);
+    };
+
+    const handleMaskClick = (e) => {
+        // 如果点击的位置在右侧 150 像素范围内，则不取消全屏
+        if (e.clientX < window.innerWidth - 150) {
+            setIsFullscreen(false);
+        }
+    };
+
 	return (
 		<div>
             <p>Dispersion of Sleep and Blood Pressure</p>
-            <ReactEcharts option={option} />
+            <div onClick={handleChartClick}>
+                <ReactEcharts
+                    ref={chartRef}
+                    option={option}
+                    style={{ width: '100%', height: '400px' }}
+                />
+            </div>
+            {isFullscreen && (
+				// 点击时加一个全屏遮罩
+                <div className="fullscreen-mask" onClick={handleMaskClick}>
+                    <ReactEcharts
+                        ref={chartRef}
+                        option={option}
+                        style={{ width: '99vw', height: '100vh' }}	// 留一点边缘，防止超出屏幕
+                    />
+                </div>
+            )}
         </div>
 	);
 }
