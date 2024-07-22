@@ -9,8 +9,11 @@ def extract_data_from_csv(csv_file_path):
         for row in csv_reader:
             sleep_duration = row['Sleep Duration']
             quality_of_sleep = row['Quality of Sleep']
-            bmi = row['BMI Category']
-            extracted_data.append([sleep_duration, quality_of_sleep, bmi])
+            blood_pressure = row['Blood Pressure'].split('/')
+            high_pressure = blood_pressure[0]
+            low_pressure = blood_pressure[1]
+
+            extracted_data.append([sleep_duration, quality_of_sleep, high_pressure, low_pressure])
     return extracted_data
 
 # 保存数据到 JSON 文件
@@ -21,7 +24,7 @@ def save_data_to_json(data, json_file_path):
 # 主函数
 def main():
     csv_file_path = 'data.csv'  # 输入 CSV 文件路径
-    json_file_path = 'data_SQ_SD_BMI.json'  # 输出 JSON 文件路径
+    json_file_path = 'data_SQ_SD_BP.json'  # 输出 JSON 文件路径
     
     extracted_data = extract_data_from_csv(csv_file_path)
     save_data_to_json(extracted_data, json_file_path)

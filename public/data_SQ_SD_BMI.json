@@ -82,7 +82,7 @@
     [
         "6.5",
         "5",
-        "Normal Weight"
+        "Normal"
     ],
     [
         "6",
@@ -92,7 +92,7 @@
     [
         "6.5",
         "5",
-        "Normal Weight"
+        "Normal"
     ],
     [
         "7.6",
@@ -152,17 +152,17 @@
     [
         "6.4",
         "5",
-        "Normal Weight"
+        "Normal"
     ],
     [
         "6.4",
         "5",
-        "Normal Weight"
+        "Normal"
     ],
     [
         "7.9",
         "8",
-        "Normal Weight"
+        "Normal"
     ],
     [
         "6.1",
@@ -332,7 +332,7 @@
     [
         "7.2",
         "8",
-        "Normal Weight"
+        "Normal"
     ],
     [
         "6",
@@ -422,7 +422,7 @@
     [
         "7.5",
         "8",
-        "Normal Weight"
+        "Normal"
     ],
     [
         "7.2",
@@ -462,7 +462,7 @@
     [
         "7.5",
         "8",
-        "Normal Weight"
+        "Normal"
     ],
     [
         "7.4",
@@ -537,12 +537,12 @@
     [
         "7.8",
         "8",
-        "Normal Weight"
+        "Normal"
     ],
     [
         "7.8",
         "8",
-        "Normal Weight"
+        "Normal"
     ],
     [
         "7.4",
@@ -627,7 +627,7 @@
     [
         "7.5",
         "8",
-        "Normal Weight"
+        "Normal"
     ],
     [
         "7.3",
@@ -742,21 +742,16 @@
     [
         "6.9",
         "7",
-        "Normal Weight"
+        "Normal"
     ],
     [
         "8",
         "9",
-        "Normal Weight"
+        "Normal"
     ],
     [
         "8",
         "9",
-        "Normal Weight"
-    ],
-    [
-        "7.2",
-        "8",
         "Normal"
     ],
     [
@@ -807,12 +802,17 @@
     [
         "7.2",
         "8",
-        "Normal Weight"
+        "Normal"
     ],
     [
         "7.2",
         "8",
-        "Normal Weight"
+        "Normal"
+    ],
+    [
+        "7.2",
+        "8",
+        "Normal"
     ],
     [
         "7.9",
@@ -832,7 +832,7 @@
     [
         "7.3",
         "8",
-        "Normal Weight"
+        "Normal"
     ],
     [
         "7.1",
@@ -1017,7 +1017,7 @@
     [
         "6.9",
         "6",
-        "Normal Weight"
+        "Normal"
     ],
     [
         "7.6",
@@ -1512,7 +1512,7 @@
     [
         "7.1",
         "7",
-        "Normal Weight"
+        "Normal"
     ],
     [
         "6",
@@ -1707,12 +1707,12 @@
     [
         "8.2",
         "9",
-        "Normal Weight"
+        "Normal"
     ],
     [
         "8.2",
         "9",
-        "Normal Weight"
+        "Normal"
     ],
     [
         "8.1",
