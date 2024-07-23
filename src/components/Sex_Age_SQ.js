@@ -51,7 +51,7 @@ function Data_Sex_Age_SQ() {
 
                 const chartOption = {
                     title: {
-                        text: 'Gender, Age, and AverageSleep Quality',
+                        text: 'Gender, Age, and Average Sleep Quality',
                         left: 'center',
                         top: 0
                     },
