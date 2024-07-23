@@ -20,34 +20,33 @@ function Data_SQ_SD_BP() {
 						top: 0
 					},
 					visualMap: [{ // 最低血压
-							type: 'continuous',
-							min: 75,
-							max: 100,
-							dimension: 3,
-							orient: 'vertical',
-							right: 100,
-							top: 'center',
-							text: ['HIGH', 'LOW'],
-							calculable: true,
-							inRange: {
-								color: ['#FFF200', '#ED1C24'] // 黄 红
-							}
-						},
-						{ // 最高血压
-							type: 'continuous',
-							min: 115,
-							max: 150,
-							dimension: 2,
-							orient: 'vertical',
-							right: 10,
-							top: 'center',
-							text: ['HIGH', 'LOW'],
-							calculable: true,
-							inRange: {
-								color: ['#FFF200', '#ED1C24'] // 黄 红
-							}
+						type: 'continuous',
+						min: 75,
+						max: 100,
+						dimension: 3,
+						orient: 'vertical',
+						right: 100,
+						top: 'center',
+						text: ['HIGH', 'LOW'],
+						calculable: true,
+						inRange: {
+							color: ['#FFF200', '#ED1C24'] // 黄 红
 						}
-					],
+					},
+					{ // 最高血压
+						type: 'continuous',
+						min: 115,
+						max: 150,
+						dimension: 2,
+						orient: 'vertical',
+						right: 10,
+						top: 'center',
+						text: ['HIGH', 'LOW'],
+						calculable: true,
+						inRange: {
+							color: ['#FFF200', '#ED1C24'] // 黄 红
+						}
+					}],
 					tooltip: {
 						trigger: 'item',
 						formatter: function(params) {
@@ -83,8 +82,11 @@ function Data_SQ_SD_BP() {
 			.catch(error => console.error('Error fetching data:', error));
 	}, []);
 
-    const handleChartClick = () => {
-        setIsFullscreen(true);
+    const handleChartClick = (e) => {
+        // 如果点击的位置在右侧 150 像素范围内，则不全屏
+        if (e.clientX < window.innerWidth - 150) {
+            setIsFullscreen(true);
+        }
     };
 
     const handleMaskClick = (e) => {
@@ -96,11 +98,11 @@ function Data_SQ_SD_BP() {
 
 	return (
 		<div>
-            <p>Dispersion of Sleep and Blood Pressure</p>
             <div onClick={handleChartClick}>
                 <ReactEcharts
                     ref={chartRef}
                     option={option}
+					theme="dark"
                     style={{ width: '100%', height: '400px' }}
                 />
             </div>
@@ -110,6 +112,7 @@ function Data_SQ_SD_BP() {
                     <ReactEcharts
                         ref={chartRef}
                         option={option}
+						theme="dark"
                         style={{ width: '99vw', height: '100vh' }}	// 留一点边缘，防止超出屏幕
                     />
                 </div>

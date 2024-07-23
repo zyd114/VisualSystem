@@ -61,8 +61,11 @@ function Data_SQ_SD_BMI() {
             .catch(error => console.error('Error fetching data:', error));
     }, []);
 
-    const handleChartClick = () => {
-        setIsFullscreen(true);
+    const handleChartClick = (e) => {
+        // 如果点击的位置在右侧 100 像素范围内，则不全屏
+        if (e.clientX < window.innerWidth - 100) {
+            setIsFullscreen(true);
+        }
     };
 
     const handleMaskClick = (e) => {
@@ -74,11 +77,11 @@ function Data_SQ_SD_BMI() {
 
     return (
         <div>
-            <p>Dispersion of Sleep and BMI</p>
             <div onClick={handleChartClick}>
                 <ReactEcharts
                     ref={chartRef}
                     option={option}
+                    theme="dark"
                     style={{ width: '100%', height: '400px' }}
                 />
             </div>
@@ -88,6 +91,7 @@ function Data_SQ_SD_BMI() {
                     <ReactEcharts
                         ref={chartRef}
                         option={option}
+                        theme="dark"
                         style={{ width: '99vw', height: '100vh' }}	// 留一点边缘，防止超出屏幕
                     />
                 </div>
